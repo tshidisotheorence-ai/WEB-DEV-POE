@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Request a Quote | Alpha Builders</title>
+
+
+    <style>
+
+        /* ================= RESET ================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            line-height: 1.6;
+
+            color: #333;
+
+            background: #f4f6f8;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: white;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,0.15);
+        }
+
+
+        nav {
+            max-width: 1200px;
+
+            margin: auto;
+
+            min-height: 80px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 10px 25px;
+
+            position: relative;
+        }
+
+
+        .logo img {
+            width: 170px;
+
+            max-height: 65px;
+
+            object-fit: contain;
+        }
+
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+
+            gap: 8px;
+        }
+
+
+        nav ul li a {
+            text-decoration: none;
+
+            color: #172b4d;
+
+            font-weight: bold;
+
+            padding: 10px 14px;
+
+            border-radius: 5px;
+        }
+
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: #172b4d;
+
+            color: white;
+        }
+
+
+        .menu-toggle {
+            display: none;
+
+            cursor: pointer;
+        }
+
+
+        .menu-toggle span {
+            display: block;
+
+            width: 28px;
+            height: 3px;
+
+            margin: 5px;
+
+            background: #172b4d;
+        }
+
+
+        /* ================= MAIN ================= */
+
+        main {
+            padding-top: 80px;
+        }
+
+
+        .page-title {
+            background: #172b4d;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 60px 20px;
+        }
+
+
+        .page-title h1 {
+            font-size: 2.6rem;
+        }
+
+
+        /* ================= FORM ================= */
+
+        .form-section {
+            padding: 60px 20px;
+        }
+
+
+        .form-container {
+            max-width: 950px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.10);
+        }
+
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+
+        .form-group {
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+
+        label {
+            font-weight: bold;
+
+            color: #172b4d;
+
+            margin-bottom: 7px;
+        }
+
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 5px;
+
+            font-family: inherit;
+
+            font-size: 1rem;
+        }
+
+
+        textarea {
+            resize: vertical;
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+
+            border-color: #172b4d;
+
+            box-shadow:
+                0 0 0 2px rgba(23,43,77,0.10);
+        }
+
+
+        fieldset {
+            border: none;
+
+            margin-top: 10px;
+        }
+
+
+        fieldset label {
+            display: inline-block;
+
+            margin-right: 20px;
+
+            font-weight: normal;
+        }
+
+
+        fieldset input {
+            width: auto;
+        }
+
+
+        .submit-area {
+            text-align: center;
+
+            margin-top: 25px;
+        }
+
+
+        button {
+            border: none;
+
+            padding: 13px 30px;
+
+            background: #172b4d;
+
+            color: white;
+
+            font-size: 1rem;
+
+            font-weight: bold;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        button:hover {
+            background: #d4af37;
+        }
+
+
+        .reset-btn {
+            background: #777;
+
+            margin-left: 10px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #101d31;
+
+            color: white;
+
+            padding: 40px 20px 20px;
+        }
+
+
+        .footer-grid {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 30px;
+        }
+
+
+        footer ul {
+            list-style: none;
+        }
+
+
+        footer a {
+            color: white;
+
+            text-decoration: none;
+        }
+
+
+        .copyright {
+            text-align: center;
+
+            border-top:
+                1px solid rgba(255,255,255,0.2);
+
+            margin-top: 30px;
+
+            padding-top: 20px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 800px) {
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media(max-width: 700px) {
+
+            nav ul {
+                display: none;
+
+                position: absolute;
+
+                top: 80px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                flex-direction: column;
+
+                padding: 15px;
+            }
+
+
+            nav ul.show {
+                display: flex;
+            }
+
+
+            .menu-toggle {
+                display: block;
+            }
+
+
+            .form-container {
+                padding: 25px 20px;
+            }
+
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+
+                <a href="index.html">
+
+                    <img src="pics/po1.png"
+                         alt="Alpha Builders Logo">
+
+                </a>
+
+            </div>
+
+
+            <div class="menu-toggle"
+                 onclick="toggleMenu()">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <ul id="navMenu">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="services.html">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="enquiry.html"
+                       class="active">
+                        Enquiry
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- ================= TITLE ================= -->
+
+        <section class="page-title">
+
+            <h1>
+                Request a Quote
+            </h1>
+
+            <p>
+                Tell us about your construction project.
+            </p>
+
+        </section>
+
+
+        <!-- ================= FORM ================= -->
+
+        <section class="form-section">
+
+            <div class="form-container">
+
+                <form id="enquiryForm">
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Full Name -->
+
+                        <div class="form-group">
+
+                            <label for="fullName">
+                                Full Name *
+                            </label>
+
+                            <input type="text"
+                                   id="fullName"
+                                   name="fullName"
+                                   required>
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address *
+                            </label>
+
+                            <input type="email"
+                                   id="email"
+                                   name="email"
+                                   required>
+
+                        </div>
+
+
+                        <!-- Telephone -->
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Telephone Number *
+                            </label>
+
+                            <input type="tel"
+                                   id="phone"
+                                   name="phone"
+                                   required>
+
+                        </div>
+
+
+                        <!-- Service -->
+
+                        <div class="form-group">
+
+                            <label for="service">
+                                Service Required *
+                            </label>
+
+                            <select id="service"
+                                    name="service"
+                                    required>
+
+                                <option value="">
+                                    -- Select a Service --
+                                </option>
+
+                                <option>
+                                    New Construction
+                                </option>
+
+                                <option>
+                                    Renovations
+                                </option>
+
+                                <option>
+                                    Building Extensions
+                                </option>
+
+                                <option>
+                                    Painting
+                                </option>
+
+                                <option>
+                                    Paving
+                                </option>
+
+                                <option>
+                                    Property Maintenance
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Property Type -->
+
+                        <div class="form-group">
+
+                            <label for="propertyType">
+                                Property Type *
+                            </label>
+
+                            <select id="propertyType"
+                                    name="propertyType"
+                                    required>
+
+                                <option value="">
+                                    -- Select Type --
+                                </option>
+
+                                <option>
+                                    Residential
+                                </option>
+
+                                <option>
+                                    Commercial
+                                </option>
+
+                                <option>
+                                    Industrial
+                                </option>
+
+                                <option>
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Project Location -->
+
+                        <div class="form-group">
+
+                            <label for="location">
+                                Project Location *
+                            </label>
+
+                            <input type="text"
+                                   id="location"
+                                   name="location"
+                                   required>
+
+                        </div>
+
+
+                        <!-- Project Details -->
+
+                        <div class="form-group full">
+
+                            <label for="details">
+                                Project Details *
+                            </label>
+
+                            <textarea id="details"
+                                      name="details"
+                                      rows="7"
+                                      placeholder="Describe your project requirements..."
+                                      required></textarea>
+
+                        </div>
+
+
+                        <!-- Contact Method -->
+
+                        <div class="form-group full">
+
+                            <fieldset>
+
+                                <legend>
+                                    Preferred Contact Method
+                                </legend>
+
+                                <label>
+
+                                    <input type="radio"
+                                           name="contactMethod"
+                                           value="Email"
+                                           checked>
+
+                                    Email
+
+                                </label>
+
+
+                                <label>
+
+                                    <input type="radio"
+                                           name="contactMethod"
+                                           value="Telephone">
+
+                                    Telephone
+
+                                </label>
+
+                            </fieldset>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- BUTTONS -->
+
+                    <div class="submit-area">
+
+                        <button type="submit">
+                            Submit Enquiry
+                        </button>
+
+                        <button type="reset"
+                                class="reset-btn">
+
+                            Clear Form
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+                <h3>Alpha Builders</h3>
+                <p>Building Your Future</p>
+            </div>
+
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="services.html">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="enquiry.html">
+                            Enquiry
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact Us</h3>
+
+                <p>012 345 6789</p>
+                <p>info@alphabuilders.co.za</p>
+                <p>Pretoria, Gauteng</p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Follow Us</h3>
+
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>LinkedIn</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                &copy; 2026 Alpha Builders.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+   
+</body>
+
+</html>
