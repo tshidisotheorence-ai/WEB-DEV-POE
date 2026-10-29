@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Services | Alpha Builders</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            line-height: 1.6;
+
+            color: #333;
+
+            background: #f4f6f8;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: white;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,0.15);
+        }
+
+
+        nav {
+            max-width: 1200px;
+
+            margin: auto;
+
+            min-height: 80px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 10px 25px;
+
+            position: relative;
+        }
+
+
+        .logo img {
+            width: 170px;
+            max-height: 65px;
+            object-fit: contain;
+        }
+
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+
+            gap: 8px;
+        }
+
+
+        nav ul li a {
+            text-decoration: none;
+
+            color: #172b4d;
+
+            font-weight: bold;
+
+            padding: 10px 14px;
+
+            border-radius: 5px;
+        }
+
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: #172b4d;
+            color: white;
+        }
+
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+
+        .menu-toggle span {
+            display: block;
+
+            width: 28px;
+            height: 3px;
+
+            margin: 5px;
+
+            background: #172b4d;
+        }
+
+
+        /* ================= MAIN ================= */
+
+        main {
+            padding-top: 80px;
+        }
+
+
+        .page-title {
+            background: #172b4d;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 70px 20px;
+        }
+
+
+        .page-title h1 {
+            font-size: 2.8rem;
+        }
+
+
+        section {
+            padding: 60px 20px;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* ================= SERVICES ================= */
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+
+        .service {
+            display: grid;
+
+            grid-template-columns: 180px 1fr;
+
+            gap: 25px;
+
+            align-items: center;
+
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.10);
+        }
+
+
+        .service img {
+            width: 180px;
+            height: 130px;
+
+            object-fit: cover;
+
+            border-radius: 5px;
+        }
+
+
+        .service h2 {
+            color: #172b4d;
+
+            margin-bottom: 8px;
+        }
+
+
+        .service a {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            color: #172b4d;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background: #172b4d;
+
+            color: white;
+
+            text-align: center;
+        }
+
+
+        .btn {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 13px 28px;
+
+            background: #d4af37;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #101d31;
+
+            color: white;
+
+            padding: 40px 20px 20px;
+        }
+
+
+        .footer-grid {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 30px;
+        }
+
+
+        footer ul {
+            list-style: none;
+        }
+
+
+        footer a {
+            color: white;
+
+            text-decoration: none;
+        }
+
+
+        .copyright {
+            text-align: center;
+
+            border-top:
+                1px solid rgba(255,255,255,0.2);
+
+            margin-top: 30px;
+
+            padding-top: 20px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 900px) {
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media(max-width: 700px) {
+
+            nav ul {
+                display: none;
+
+                position: absolute;
+
+                top: 80px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                flex-direction: column;
+
+                padding: 15px;
+            }
+
+
+            nav ul.show {
+                display: flex;
+            }
+
+
+            .menu-toggle {
+                display: block;
+            }
+
+
+            .service {
+                grid-template-columns: 1fr;
+            }
+
+
+            .service img {
+                width: 100%;
+                height: 220px;
+            }
+
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+
+                <a href="index.html">
+
+                    <img src="pics/po1.png"
+                         alt="Alpha Builders Logo">
+
+                </a>
+
+            </div>
+
+
+            <div class="menu-toggle"
+                 onclick="toggleMenu()">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <ul id="navMenu">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="services.html"
+                       class="active">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="enquiry.html">
+                        Enquiry
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- ================= TITLE ================= -->
+
+        <section class="page-title">
+
+            <h1>
+                Our Services
+            </h1>
+
+            <p>
+                Professional construction solutions
+                for your project.
+            </p>
+
+        </section>
+
+
+        <!-- ================= SERVICES ================= -->
+
+        <section>
+
+            <div class="container">
+
+                <div class="services-grid">
+
+
+                    <!-- Construction -->
+
+                    <article class="service">
+
+                        <img src="pics/bui.jpg"
+                             alt="New construction">
+
+                        <div>
+
+                            <h2>
+                                New Construction
+                            </h2>
+
+                            <p>
+                                We provide quality construction
+                                solutions for residential and
+                                commercial developments.
+                            </p>
+
+                            <a href="enquiry.html">
+                                Request a Quote
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Renovation -->
+
+                    <article class="service">
+
+                        <img src="pics/re.jpg"
+                             alt="Renovation">
+
+                        <div>
+
+                            <h2>
+                                Renovations
+                            </h2>
+
+                            <p>
+                                We renovate and improve
+                                existing properties to create
+                                functional spaces.
+                            </p>
+
+                            <a href="enquiry.html">
+                                Request a Quote
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Extensions -->
+
+                    <article class="service">
+
+                        <img src="pics/ex.jpg"
+                             alt="Building extensions">
+
+                        <div>
+
+                            <h2>
+                                Building Extensions
+                            </h2>
+
+                            <p>
+                                We create additional spaces
+                                that integrate with existing
+                                properties.
+                            </p>
+
+                            <a href="enquiry.html">
+                                Request a Quote
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Painting -->
+
+                    <article class="service">
+
+                        <img src="pics/pi.jpg"
+                             alt="Painting">
+
+                        <div>
+
+                            <h2>
+                                Painting
+                            </h2>
+
+                            <p>
+                                Professional interior and
+                                exterior painting services.
+                            </p>
+
+                            <a href="enquiry.html">
+                                Request a Quote
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Paving -->
+
+                    <article class="service">
+
+                        <img src="pics/pav.jpeg"
+                             alt="Pav">
+
+                        <div>
+
+                            <h2>
+                                Paving
+                            </h2>
+
+                            <p>
+                                Quality paving for driveways,
+                                walkways and outdoor areas.
+                            </p>
+
+                            <a href="enquiry.html">
+                                Request a Quote
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Maintenance -->
+
+                    <article class="service">
+
+                        <img src="pics/mmm.jpg"
+                             alt="Property maintenance">
+
+                        <div>
+
+                            <h2>
+                                Property Maintenance
+                            </h2>
+
+                            <p>
+                                We help keep your property
+                                safe, functional and
+                                well-maintained.
+                            </p>
+
+                            <a href="enquiry.html">
+                                Request a Quote
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="cta">
+
+            <div class="container">
+
+                <h2>
+                    Have a Project in Mind?
+                </h2>
+
+                <p>
+                    Let Alpha Builders help bring
+                    your ideas to life.
+                </p>
+
+                <a href="enquiry.html"
+                   class="btn">
+
+                    Request a Quote
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+                <h3>Alpha Builders</h3>
+                <p>Building Your Future</p>
+            </div>
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="services.html">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="enquiry.html">
+                            Enquiry
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h3>Contact Us</h3>
+
+                <p>012 345 6789</p>
+                <p>info@alphabuilders.co.za</p>
+                <p>Pretoria, Gauteng</p>
+
+            </div>
+
+            <div>
+
+                <h3>Follow Us</h3>
+
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>LinkedIn</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                &copy; 2026 Alpha Builders.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+   
+
+</body>
+
+</html>
