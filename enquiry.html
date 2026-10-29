@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Request a Quote | Alpha Builders
+  </title>
+<link href="css/style.css" rel="stylesheet"/>
+<meta content="Request a construction quote from Alpha Builders." name="description"/>
+</head>
+<body class="page-enquiry">
+<!--  HEADER -->
+<header>
+<nav class="site-nav">
+<a class="logo" href="index.html">
+<img alt="Alpha Builders Logo" src="pics/po1.png"/>
+</a>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation" class="menu-toggle" type="button">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</button>
+<ul id="navMenu">
+<li>
+<a href="index.html">
+       Home
+      </a>
+</li>
+<li>
+<a href="about.html">
+       About Us
+      </a>
+</li>
+<li>
+<a href="services.html">
+       Services
+      </a>
+</li>
+<li>
+<a href="gallery.html">
+       Gallery
+      </a>
+</li>
+<li>
+<a aria-current="page" class="active" href="enquiry.html">
+       Enquiry
+      </a>
+</li>
+<li>
+<a href="contact.html">
+       Contact
+      </a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<!--  TITLE  -->
+<section class="page-title">
+<h1>
+     Request a Quote
+    </h1>
+<p>
+     Tell us about your construction project.
+    </p>
+</section>
+<!--  FORM  -->
+<section class="form-section">
+<div class="form-container">
+<form action="/" data-netlify="true" enctype="text/plain" id="enquiryForm" method="POST" name="quote-request" netlify-honeypot="bot-field"><input name="form-name" type="hidden" value="quote-request"/><p class="visually-hidden">Leave this field empty: <input autocomplete="off" name="bot-field" tabindex="-1"/></p><div class="estimate-panel"><h2>Project Details &amp; Instant Cost Estimate</h2><p>Illustrative starting rates only, in ZAR per square metre for building, renovation, extension, painting and paving; maintenance is per hour. These are sample assumptions, not Alpha Builders' verified prices. Final quotes depend on scope, materials, site conditions and taxes.</p><div class="estimate-grid"><div><label for="estimateService">Service</label><select id="estimateService" name="service" required=""></select></div><div><label for="estimateArea">Project size (m²) / maintenance hours *</label><input id="estimateArea" max="100000" min="1" name="quantity" required="" type="number" value="50"/></div><div><label for="estimateComplexity">Project complexity</label><select id="estimateComplexity" name="complexity" required=""><option value="1">Standard (1.0×)</option><option value="1.2">Moderate (1.2×)</option><option value="1.5">Complex (1.5×)</option></select></div></div><output aria-live="polite" id="estimateTotal"></output><p class="estimate-note">Indicative estimate only — request a detailed written quotation before agreeing to work.</p></div>
+<div class="form-grid">
+<!-- Full Name -->
+<div class="form-group">
+<label for="fullName">
+         Full Name *
+        </label>
+<input id="fullName" minlength="2" name="fullName" required="" type="text"/>
+</div>
+<!-- Email -->
+<div class="form-group">
+<label for="email">
+         Email Address *
+        </label>
+<input id="email" name="email" required="" type="email"/>
+</div>
+<!-- Telephone -->
+<div class="form-group">
+<label for="phone">
+         Telephone Number *
+        </label>
+<input id="phone" name="phone" required="" type="tel"/>
+</div>
+<!-- Service -->
+
+<!-- Property Type -->
+<div class="form-group">
+<label for="propertyType">
+         Property Type *
+        </label>
+<select id="propertyType" name="propertyType" required="">
+<option value="">
+          -- Select Type --
+         </option>
+<option>
+          Residential
+         </option>
+<option>
+          Commercial
+         </option>
+<option>
+          Industrial
+         </option>
+<option>
+          Other
+         </option>
+</select>
+</div>
+<!-- Project Location -->
+<div class="form-group">
+<label for="location">
+         Project Location *
+        </label>
+<input id="location" name="location" required="" type="text"/>
+</div>
+<!-- Project Details -->
+<div class="form-group full">
+<label for="details">
+         Project Details *
+        </label>
+<textarea id="details" name="details" placeholder="Describe your project requirements..." required="" rows="7"></textarea>
+</div>
+<!-- Contact Method -->
+<div class="form-group full">
+<fieldset>
+<legend>
+          Preferred Contact Method
+         </legend>
+<label>
+<input checked="" name="contactMethod" type="radio" value="Email"/>
+          Email
+         </label>
+<label>
+<input name="contactMethod" type="radio" value="Telephone"/>
+          Telephone
+         </label>
+</fieldset>
+</div>
+</div>
+<!-- BUTTONS -->
+<div class="submit-area">
+<button type="submit">Submit Quote Request With Estimate</button>
+<button class="reset-btn" type="reset">
+        Clear Form
+       </button>
+</div>
+<p id="estimateDisclaimer">The estimate above is automatically included in your enquiry. Final pricing is subject to a site assessment and written quotation.</p><p id="enquiryStatus" role="status"></p><input id="estimatedQuote" name="estimatedQuote" type="hidden"/></form>
+</div>
+</section>
+</main>
+<!--  FOOTER  -->
+<footer>
+<div class="footer-grid">
+<div>
+<h3>
+      Alpha Builders
+     </h3>
+<p>
+      Building Your Future
+     </p>
+</div>
+<div>
+<h3>
+      Quick Links
+     </h3>
+<ul>
+<li>
+<a href="index.html">
+        Home
+       </a>
+</li>
+<li>
+<a href="about.html">
+        About Us
+       </a>
+</li>
+<li>
+<a href="services.html">
+        Services
+       </a>
+</li>
+<li>
+<a href="enquiry.html">
+        Enquiry
+       </a>
+</li>
+<li>
+<a href="contact.html">
+        Contact
+       </a>
+</li>
+</ul>
+</div>
+<div>
+<h3>
+      Contact Us
+     </h3>
+<p>
+      012 345 6789
+     </p>
+<p>
+      info@alphabuilders.co.za
+     </p>
+<p>
+      Pretoria, Gauteng
+     </p>
+</div>
+<div class="social-links">
+<h3>
+      Follow Us
+     </h3>
+<a href="https://www.facebook.com/YourPage" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+            </a>
+
+            <!-- X (Twitter) -->
+            <a href="https://x.com/RanganiRNR?t=ayu9RnvL8N2Vy5HoBfgoDQ&s=09" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X (Twitter)">
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/_theo_mode?igsi=dmRpZTNhanh4d3A1" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:tshidisotheorence@email.com">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+            </a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/0813076095" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+            </a>
+</div>
+</div>
+<div class="copyright">
+<p>
+     © 2026 Alpha Builders.
+                All Rights Reserved.
+    </p>
+</div>
+</footer>
+<script src="js/menu.js">
+</script>
+<script src="js/part3.js"></script></body>
+</html>
